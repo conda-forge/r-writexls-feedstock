@@ -14,9 +14,8 @@ Summary: Cross-platform Perl based R function to create Excel 2003 (XLS) and Exc
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-writexls-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-writexls-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-writexls-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-writexls-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-writexls-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-writexls-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-writexls-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-writexls-feedstock)
 
 Current release info
 ====================
