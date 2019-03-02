@@ -1,5 +1,4 @@
-{% set version = '4.0.0' %}
-
+{% set version = '4.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,43 +7,60 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: WriteXLS_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/WriteXLS_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
-  sha256: a0541da45e16bc4bf994cdf3f07a0e202c38d52386460c64e27fe6c1cd889d5b
+    - {{ cran_mirror }}/src/contrib/WriteXLS_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
+  sha256: 455849d9d369593c2cb313b21dbd479342ce3b09fc4e0aaf9c9d3e65811fecc1
 
 build:
+  merge_build_host: True  # [win]
+  number: 0
   noarch: generic
-  number: 1001
-
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('WriteXLS')"  # [not win]
+    - $R -e "library('WriteXLS')"           # [not win]
     - "\"%R%\" -e \"library('WriteXLS')\""  # [win]
 
 about:
   home: https://github.com/marcschwartz/WriteXLS
   license: GPL (>= 2)
-  summary: Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX)
+  summary: 'Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX)
     files from one or more data frames. Each data frame will be written to a separate
     named worksheet in the Excel spreadsheet. The worksheet name will be the name of
-    the data frame it contains or can be specified by the user.
+    the data frame it contains or can be specified by the user. '
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
+    - conda-forge/r
+
+# Package: WriteXLS
+# Version: 4.1.0
+# Date: 2019-02-26
+# Title: Cross-Platform Perl Based R Function to Create Excel 2003 (XLS) and Excel 2007 (XLSX) Files
+# Description: Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX) files from one or more data frames. Each data frame will be written to a separate named worksheet in the Excel spreadsheet. The worksheet name will be the name of the data frame it contains or can be specified by the user.
+# Author: Marc Schwartz <marc_schwartz@me.com> and various authors for Perl modules listed in each .pm file.
+# Copyright: The copyright holders of the Perl files are listed in each .pm file under the Perl directory.
+# Maintainer: Marc Schwartz <marc_schwartz@me.com>
+# License: GPL (>= 2)
+# SystemRequirements: Perl
+# Imports: utils
+# URL: https://github.com/marcschwartz/WriteXLS
+# BugReports: https://github.com/marcschwartz/WriteXLS/issues
+# NeedsCompilation: no
+# Packaged: 2019-02-26 20:54:35 UTC; marcschwartz
+# Repository: CRAN
+# Date/Publication: 2019-02-26 21:40:14 UTC
