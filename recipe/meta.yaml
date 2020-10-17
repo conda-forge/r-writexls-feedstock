@@ -1,4 +1,4 @@
-{% set version = '5.0.0' %}
+{% set version = "6.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WriteXLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
-  sha256: 5aeb631c7f4dee300a19ded493110d7241e1b79744be05beca770a01ffc1d7bf
+  sha256: 19dd430ed735095d7e08a15dfe1df269918b0a102737f15b4e3b03aaec4ab3d0
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -36,12 +36,9 @@ test:
 about:
   home: https://github.com/marcschwartz/WriteXLS
   license: GPL (>= 2)
-  summary: 'Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX)
-    files from one or more data frames. Each data frame will be written to a separate
-    named worksheet in the Excel spreadsheet. The worksheet name will be the name of
-    the data frame it contains or can be specified by the user. '
+  summary: 'Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX) files from one or more data frames. Each data frame will be written to a separate named worksheet in the Excel spreadsheet. The worksheet name will be the name of the data frame it contains or can be specified by the user. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
