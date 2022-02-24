@@ -1,4 +1,4 @@
-{% set version = "6.3.0" %}
+{% set version = "6.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WriteXLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
-  sha256: 0b1d987abe4b08f6a32003b77d1cfc2eefdc5a478382e77ca0da98bccf6e526b
+  sha256: 644b90a82683c668b6e05bb4f940111a42cd634f63a5b559351e8cd4274a19b7
 
 build:
   merge_build_host: true  # [win]
