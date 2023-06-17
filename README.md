@@ -1,11 +1,11 @@
-About r-writexls
-================
+About r-writexls-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-writexls-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/marcschwartz/WriteXLS
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-writexls-feedstock/blob/main/LICENSE.txt)
 
 Summary: Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX) files from one or more data frames. Each data frame will be written to a separate named worksheet in the Excel spreadsheet. The worksheet name will be the name of the data frame it contains or can be specified by the user. 
 
