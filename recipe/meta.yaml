@@ -1,4 +1,4 @@
-{% set version = "6.4.0" %}
+{% set version = "6.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WriteXLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
-  sha256: 644b90a82683c668b6e05bb4f940111a42cd634f63a5b559351e8cd4274a19b7
+  sha256: c4725eedd8ad2207e4387219d8ea21c37b6ac133fc9d38103cdfb1434d066ce6
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
