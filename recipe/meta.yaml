@@ -1,4 +1,4 @@
-{% set version = "6.7.0" %}
+{% set version = "6.8.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WriteXLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz
-  sha256: d32cef9d6e9da3b7a76745e997d81ef142fced8be0bf3c05603172e6e581266f
+  sha256: 0bd6b892815eb54f506583cf16bec951c7722db0ad99bffe5a681bc57b1f09f6
 
 build:
   number: 0
